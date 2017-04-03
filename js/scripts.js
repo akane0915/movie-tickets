@@ -17,6 +17,14 @@ Address.prototype.fullAddress = function() {
   return this.street + ", " + this.city + ", " + this.state;
 }
 
+function resetFields() {
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input.new-street").val("");
+    $("input.new-city").val("");
+    $("input.new-state").val("");
+}
+
 
 // UI logic
 $(document).ready(function(){
@@ -69,10 +77,7 @@ $(document).ready(function(){
       });
     }); // Contact click function close
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-state").val("");
+    resetFields();
+    
   }); //New contact form close
 }); //Document ready close
