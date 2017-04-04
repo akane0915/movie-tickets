@@ -1,3 +1,5 @@
+// NEW STUFF -- This code is more efficient if the app will always evaluate all three parameters (title, time, age) together.
+
 //Business Logic
 function Ticket(title,time,age){
   this.title= title;
@@ -7,33 +9,20 @@ function Ticket(title,time,age){
 }
 
 Ticket.prototype.alterPrice = function () {
+  var finalPrice = this.price;
   if(this.title === "Zoolander"){
-    return this.price -= 5.00;
-    if(this.age >= 60){
-      return this.price -= 2.50;
-      if(this.time === "3pm"){
-        return this.price -= 2.50;
-      } else {
-        return this.price;
-      }
-    } else {
-      return this.price;
-    }
-  } else {
-    return this.price;
+    finalPrice -= 5.00;
   }
+
+  if (this.age >= 60){
+    finalPrice -= 2.50;
+  }
+
+  if (this.time === "3pm"){
+    finalPrice -= 2.50;
+  }
+  return finalPrice;
 }
-
-
-//   else if (this.age >= 60){
-//     return this.price -= 2.50;
-//   } else if (this.time === "3pm"){
-//     return this.price -= 2.50;
-//   } else {
-//     return this.price;
-//   }
-// }
-
 
 
 // User Interface Logic
@@ -52,8 +41,8 @@ $(document).ready(function(){
 });
 
 
+// OLD STUFF -- This code is more efficient if the app will evaluate each parameter (title, time, age) invidually.
 
-// OLD STUFF
 //Business Logic
 // function Ticket(title,time,age){
 //   this.title= title;
