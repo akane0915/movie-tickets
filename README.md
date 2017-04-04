@@ -1,4 +1,5 @@
 Specifications
+
 | Behavior |  Input   |  Output  |
 |----------|:--------:|:--------:|
 |The program provides fields for the user to select a movie, time, and user's age | N/A | N/A |

@@ -13,7 +13,24 @@
       <h1>Get Your Movie Tickets!</h1>
     </div>
     <div class="container">
-      <form>
+      <form id="movie-form">
+        <label for="movie-title">Select Movie: </label>
+        <select id="movie-title">
+          <option value="beauty" >Beauty and The Beast </option>
+          <option value="zoo" >Zoolander </option>
+          <option value="kong" >Kong: Skull Island </option>
+        </select>
+        <br><br>
+        <label for="show-time">Select Showtime: </label>
+        <select id="show-time">
+          <option value="matinee" >3pm</option>
+          <option value="evening" >6pm </option>
+          <option value="night" >9pm </option>
+        </select>
+        <br><br>
+        <label for="user-age">Enter your age: </label>
+        <input id="user-age" type="number" min="1">
+        <br><br>
         <button type="submit">Submit</button>
       </form>
       <div class="output">
